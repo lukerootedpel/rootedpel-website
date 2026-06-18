@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rooted Website Concepts Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@500;600;700&family=Karla:wght@400;600;700&family=Manrope:wght@400;500;700&family=Source+Serif+4:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      body {
+        font-family: "Manrope", "Segoe UI", sans-serif;
+        background: #f6f5f1;
+        color: #1f261f;
+      }
+
+      .preview-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(246, 245, 241, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(31, 38, 31, 0.12);
+        padding: 0.85rem 1rem;
+      }
+
+      .preview-header p {
+        margin: 0;
+        text-align: center;
+        font-size: 0.95rem;
+        color: #3e4b3e;
+      }
+
+      .concept {
+        min-height: 100vh;
+        padding: clamp(1.2rem, 2vw, 2rem);
+        border-bottom: 1px solid rgba(31, 38, 31, 0.15);
+      }
+
+      .shell {
+        max-width: 1180px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.9rem 1.2rem;
+      }
+
+      .topbar img {
+        height: 42px;
+        width: auto;
+      }
+
+      .topbar nav {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .topbar a {
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        display: grid;
+        gap: 1.2rem;
+        padding: 1.2rem;
+      }
+
+      .hero h2 {
+        margin: 0;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 44ch;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+        margin-top: 0.9rem;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        font-weight: 700;
+        cursor: default;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 1rem 1.2rem 1.2rem;
+      }
+
+      .card {
+        border-radius: 14px;
+        padding: 1rem;
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 0.4rem;
+        font-size: 1.05rem;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 1rem;
+        padding: 0 1.2rem 1.2rem;
+      }
+
+      .panel {
+        border-radius: 14px;
+        padding: 1rem;
+      }
+
+      .form-mock {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+      }
+
+      .form-mock .full {
+        grid-column: 1 / -1;
+      }
+
+      .input {
+        height: 38px;
+        border-radius: 8px;
+        border: 1px solid;
+      }
+
+      .textarea {
+        height: 90px;
+      }
+
+      .chip {
+        display: inline-block;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        padding: 0.25rem 0.55rem;
+      }
+
+      .option-label {
+        margin-bottom: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+      }
+
+      #concept-1 {
+        background: linear-gradient(160deg, #f0efe8, #dddbc9);
+      }
+
+      #concept-1 .shell {
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(85, 107, 47, 0.22);
+        box-shadow: 0 24px 48px rgba(32, 40, 32, 0.14);
+      }
+
+      #concept-1 .topbar a {
+        color: #1f261f;
+      }
+
+      #concept-1 .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      #concept-1 h2,
+      #concept-1 h3 {
+        font-family: "Fraunces", Georgia, serif;
+      }
+
+      #concept-1 .card,
+      #concept-1 .panel {
+        background: #ffffff;
+        border: 1px solid #dddbc9;
+      }
+
+      #concept-1 .btn.primary {
+        background: #556b2f;
+        color: #fff;
+      }
+
+      #concept-1 .btn.secondary {
+        background: transparent;
+        border: 2px solid #8b7d5b;
+        color: #6b5b4d;
+      }
+
+      #concept-1 .chip {
+        background: #f0efe8;
+        color: #556b2f;
+      }
+
+      #concept-1 .input {
+        border-color: #dddbc9;
+        background: #fff;
+      }
+
+      #concept-2 {
+        background: linear-gradient(180deg, #f5f3f0, #e8e6e3);
+      }
+
+      #concept-2 .shell {
+        background: #f5f3f0;
+        border: 2px solid #1a2419;
+        box-shadow: 0 14px 28px rgba(22, 28, 21, 0.18);
+      }
+
+      #concept-2 .topbar {
+        background: #1a2419;
+      }
+
+      #concept-2 .topbar a {
+        color: #f5f3f0;
+      }
+
+      #concept-2 .hero {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #concept-2 h2,
+      #concept-2 h3 {
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      #concept-2 p,
+      #concept-2 li {
+        font-family: "Source Serif 4", Georgia, serif;
+      }
+
+      #concept-2 .card,
+      #concept-2 .panel {
+        background: #ece9e4;
+        border-top: 4px solid #6b8e23;
+      }
+
+      #concept-2 .btn.primary {
+        background: #6b8e23;
+        color: #fff;
+      }
+
+      #concept-2 .btn.secondary {
+        background: transparent;
+        border: 2px solid #a67c52;
+        color: #5a3f27;
+      }
+
+      #concept-2 .chip {
+        background: #d9d4ce;
+        color: #1a2419;
+      }
+
+      #concept-2 .input {
+        border-color: #c9c3bb;
+        background: #f5f3f0;
+      }
+
+      #concept-3 {
+        background:
+          radial-gradient(
+            circle at 14% 18%,
+            rgba(169, 186, 132, 0.22),
+            transparent 34%
+          ),
+          linear-gradient(155deg, #f0efe8, #dddbc9);
+      }
+
+      #concept-3 .shell {
+        background: #fdfcf8;
+        border: 1px solid rgba(79, 90, 79, 0.28);
+        box-shadow: 0 18px 36px rgba(30, 37, 30, 0.12);
+      }
+
+      #concept-3 .topbar {
+        border-bottom: 1px dashed #a9ba84;
+      }
+
+      #concept-3 .topbar a {
+        color: #3e4f2d;
+      }
+
+      #concept-3 .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      #concept-3 h2,
+      #concept-3 h3 {
+        font-family: "Fraunces", Georgia, serif;
+      }
+
+      #concept-3 .card,
+      #concept-3 .panel {
+        background: #fff;
+        border-left: 4px solid #556b2f;
+      }
+
+      #concept-3 .btn.primary {
+        background: #556b2f;
+        color: #fff;
+      }
+
+      #concept-3 .btn.secondary {
+        background: #f0efe8;
+        border: 2px solid #556b2f;
+        color: #3c4d22;
+      }
+
+      #concept-3 .chip {
+        background: #eef2e3;
+        color: #3d4620;
+      }
+
+      #concept-3 .input {
+        border-color: #c9d3b2;
+        background: #fff;
+      }
+
+      .mock-logo {
+        width: 100%;
+        max-width: 310px;
+        justify-self: end;
+      }
+
+      .mock-logo img {
+        width: 100%;
+        display: block;
+      }
+
+      .muted {
+        opacity: 0.78;
+      }
+
+      @media (max-width: 920px) {
+        .hero,
+        #concept-1 .hero,
+        #concept-2 .hero,
+        #concept-3 .hero,
+        .grid-3,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .mock-logo {
+          justify-self: start;
+          max-width: 220px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="preview-header">
+      <p>Rooted visual concept previews: Option 1, Option 2, Option 3</p>
+    </header>
+
+    <section id="concept-1" class="concept">
+      <div class="shell">
+        <div class="topbar">
+          <img src="ROOTED_recreated_vectorPNG.png" alt="Rooted logo" />
+          <nav>
+            <a href="#">Services</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+        <div class="hero">
+          <div>
+            <p class="option-label">Option 1: Earthy Premium</p>
+            <h2>Rooted in Excellence. Grounded in Trust.</h2>
+            <p class="muted">
+              Comprehensive plumbing, earthworks, and landscaping services for
+              homes and commercial sites.
+            </p>
+            <div class="cta-row">
+              <button class="btn primary">Start Your Project</button>
+              <button class="btn secondary">View Our Work</button>
+            </div>
+          </div>
+          <div class="mock-logo">
+            <img src="ROOTED_recreated_vectorPNG.png" alt="Rooted brand" />
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="chip">Plumbing</span>
+            <h3>Reliable water and drainage systems</h3>
+            <p>
+              Installations, maintenance, and emergency repairs with transparent
+              pricing.
+            </p>
+          </article>
+          <article class="card">
+            <span class="chip">Earthworks</span>
+            <h3>Precise site prep and grading</h3>
+            <p>
+              Ground shaping, excavation, and drainage planning built for
+              longevity.
+            </p>
+          </article>
+          <article class="card">
+            <span class="chip">Landscaping</span>
+            <h3>Functional outdoor transformations</h3>
+            <p>
+              Hardscape, planting, and layout work that balances beauty and
+              durability.
+            </p>
+          </article>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h3>Why clients choose Rooted</h3>
+            <p>
+              Licensed and insured teams, dependable timelines, and
+              craftsmanship that holds up in real-world conditions.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Contact Form Preview</h3>
+            <div class="form-mock">
+              <div class="input"></div>
+              <div class="input"></div>
+              <div class="input full"></div>
+              <div class="input full"></div>
+              <div class="input full textarea"></div>
+              <button class="btn primary full">Send Inquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="concept-2" class="concept">
+      <div class="shell">
+        <div class="topbar">
+          <img src="ROOTED_recreated_vectorPNG.png" alt="Rooted logo" />
+          <nav>
+            <a href="#">Capabilities</a>
+            <a href="#">Work</a>
+            <a href="#">Quote</a>
+          </nav>
+        </div>
+        <div class="hero">
+          <div>
+            <p class="option-label">Option 2: Bold Field Utility</p>
+            <h2>Built to Last. Built to Work.</h2>
+            <p class="muted">
+              A structured, practical visual style that signals reliability and
+              technical capability.
+            </p>
+            <div class="cta-row">
+              <button class="btn primary">Get a Quote</button>
+              <button class="btn secondary">See Projects</button>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Trust Snapshot</h3>
+            <p>Licensed and insured</p>
+            <p>Local field experience</p>
+            <p>Clear scope and delivery</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="chip">Service 01</span>
+            <h3>Plumbing Solutions</h3>
+            <p>
+              Repair and install systems with clean, code-aligned workmanship.
+            </p>
+          </article>
+          <article class="card">
+            <span class="chip">Service 02</span>
+            <h3>Earthworks and Excavation</h3>
+            <p>
+              Ground prep, grading, and drainage that supports downstream
+              quality.
+            </p>
+          </article>
+          <article class="card">
+            <span class="chip">Service 03</span>
+            <h3>Landscaping Delivery</h3>
+            <p>Durable softscape and hardscape tailored to site conditions.</p>
+          </article>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h3>Project + Testimonial Zone</h3>
+            <p>
+              Card-led area for recent jobs, project outcomes, and client
+              feedback quotes.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Contact Form Preview</h3>
+            <div class="form-mock">
+              <div class="input"></div>
+              <div class="input"></div>
+              <div class="input"></div>
+              <div class="input"></div>
+              <div class="input full"></div>
+              <div class="input full textarea"></div>
+              <button class="btn primary full">Request a Quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="concept-3" class="concept">
+      <div class="shell">
+        <div class="topbar">
+          <img src="ROOTED_recreated_vectorPNG.png" alt="Rooted logo" />
+          <nav>
+            <a href="#">What We Do</a>
+            <a href="#">Stories</a>
+            <a href="#">Start</a>
+          </nav>
+        </div>
+        <div class="hero">
+          <div>
+            <p class="option-label">Option 3: Natural Craft Studio</p>
+            <h2>Real Work. Real Results.</h2>
+            <p class="muted">
+              Organic, crafted, and warm direction with an editorial rhythm and
+              human tone.
+            </p>
+            <div class="cta-row">
+              <button class="btn primary">Explore Services</button>
+              <button class="btn secondary">Talk to Us</button>
+            </div>
+          </div>
+          <div class="mock-logo">
+            <img src="ROOTED_recreated_vectorPNG.png" alt="Rooted brand" />
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="chip">Craft 01</span>
+            <h3>Plumbing</h3>
+            <p>Dependable installations and repairs delivered with care.</p>
+          </article>
+          <article class="card">
+            <span class="chip">Craft 02</span>
+            <h3>Earthworks</h3>
+            <p>
+              Intentional ground shaping and site prep for long-term
+              performance.
+            </p>
+          </article>
+          <article class="card">
+            <span class="chip">Craft 03</span>
+            <h3>Landscaping</h3>
+            <p>
+              Outdoor places designed for use, durability, and natural balance.
+            </p>
+          </article>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h3>Project Highlights</h3>
+            <p>
+              Image-first cards for before/after outcomes, client stories, and
+              service tags.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Contact Form Preview</h3>
+            <div class="form-mock">
+              <div class="input full"></div>
+              <div class="input"></div>
+              <div class="input"></div>
+              <div class="input full"></div>
+              <div class="input full textarea"></div>
+              <button class="btn primary full">Send Inquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
