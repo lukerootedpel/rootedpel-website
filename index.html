@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rooted | Coming Soon</title>
+    <title>Rooted | Plumbing, Earthworks and Landscaping</title>
     <meta
       name="description"
-      content="Rooted plumbing, earthworks, and landscaping website launching soon."
+      content="Rooted provides trusted plumbing, earthworks, and landscaping services for residential and commercial projects."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,18 +17,326 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page-shell">
-      <section class="card" aria-labelledby="coming-soon-title">
-        <div class="logo-wrap" role="img" aria-label="Rooted company logo">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <main id="main-content">
+      <section id="home" class="hero section-pad" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Plumbing, Earthworks and Landscaping</p>
+            <div class="hero-title-row">
+              <img
+                src="rooted-nb.png"
+                alt="Rooted logo mark"
+                class="hero-title-logo"
+              />
+              <h1 id="hero-title">Rooted in Quality.<br />Driven by Dirt.</h1>
+            </div>
+            <p class="lead">
+              Comprehensive services for residential and commercial projects,
+              delivered with clear communication and reliable workmanship.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#contact">Get Started</a>
+              <a class="btn btn-secondary" href="#instagram"
+                >Our latest projects</a
+              >
+            </div>
+          </div>
+
+          <div class="hero-icon-row" aria-label="Service highlights">
+            <img src="icons/engineer.png" alt="Engineer" class="hero-icon" />
+            <img src="icons/shovel.png" alt="Shovel" class="hero-icon" />
+            <img src="icons/repairing.png" alt="Repairing" class="hero-icon" />
+            <img src="icons/support.png" alt="Support" class="hero-icon" />
+            <img src="icons/water-tap.png" alt="Water tap" class="hero-icon" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="services"
+        class="services section-pad"
+        aria-labelledby="services-title"
+      >
+        <div class="container">
+          <p class="eyebrow">Our Services</p>
+          <h2 id="services-title">
+            Versatile by nature. Tailored to your project's needs.
+          </h2>
+          <p class="section-intro">
+            Big job or small, we bring the same care and attention to every
+            project.
+          </p>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <p class="chip">Plumbing</p>
+              <h3>Reliable solutions for water, gas, and drainage systems.</h3>
+              <ul class="service-list">
+                <li>Hot water systems</li>
+                <li>Gas fitting</li>
+                <li>Septic systems</li>
+                <li>Drainage</li>
+                <li>Water reticulation</li>
+                <li>Roofing</li>
+              </ul>
+            </article>
+
+            <article class="service-card">
+              <p class="chip">Earthworks</p>
+              <h3>End-to-end site preparation, shaping, and access</h3>
+              <ul class="service-list">
+                <li>Driveways</li>
+                <li>Rockwork</li>
+                <li>Vegetation management</li>
+                <li>Erosion control</li>
+                <li>Site cuts</li>
+                <li>Hard stand preparation</li>
+              </ul>
+            </article>
+
+            <article class="service-card">
+              <p class="chip">Landscaping</p>
+              <h3>Creating functional and attractive outdoor spaces.</h3>
+              <ul class="service-list">
+                <li>Paving</li>
+                <li>Retaining Walls</li>
+                <li>Decks</li>
+                <li>Pergolas</li>
+                <li>Fencing</li>
+                <li>Small concreting projects</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="instagram"
+        class="instagram section-pad"
+        aria-labelledby="instagram-title"
+      >
+        <div class="container instagram-grid">
+          <div class="instagram-intro">
+            <p class="eyebrow">Our latest projects</p>
+            <h2 id="instagram-title">See what we are working on</h2>
+            <p class="section-intro">
+              Take a look at our latest projects and the details that bring them
+              to life.
+            </p>
+            <a
+              class="btn btn-secondary instagram-link"
+              href="https://www.instagram.com/rootedpel/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View @rootedpel
+            </a>
+          </div>
+
+          <div class="instagram-embed-shell">
+            <behold-widget feed-id="HpN0rIN2MANuaSgEUcqm"></behold-widget>
+            <script>
+              (() => {
+                const d = document;
+                const s = d.createElement("script");
+                s.type = "module";
+                s.src = "https://w.behold.so/widget.js";
+                d.head.append(s);
+              })();
+            </script>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="contact section-pad"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact-grid">
+          <div class="contact-intro">
+            <p class="eyebrow">Get in Touch</p>
+            <h2 id="contact-title">Tell us about your project</h2>
+            <p class="section-intro">
+              Send through your details and we will respond within 24 hours to
+              discuss scope, timing, and next steps.
+            </p>
+            <ul class="contact-points">
+              <li>Phone: 0430 435 719</li>
+              <li>Email: hello@rooted.com.au</li>
+              <li>
+                Service area: Greater Geelong and Melbourne region and
+                surrounding suburbs
+              </li>
+            </ul>
+          </div>
+
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/ajax/rootedpel@outlook.com"
+            method="post"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Rooted website inquiry"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="form-field-hidden" aria-hidden="true">
+              <label for="company">Company</label>
+              <input
+                id="company"
+                name="_honey"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+
+            <div class="form-field">
+              <label for="service">Service needed</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="earthworks">Earthworks</option>
+                <option value="landscaping">Landscaping</option>
+                <option value="multiple">Multiple services</option>
+              </select>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="location">Suburb or location</label>
+              <input id="location" name="location" type="text" required />
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="message">Project details</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-field form-field-full form-checkbox">
+              <input id="consent" name="consent" type="checkbox" required />
+              <label for="consent"
+                >I agree to be contacted about this inquiry.</label
+              >
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              Submit
+            </button>
+
+            <p
+              id="form-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
           <img
-            src="ROOTED_recreated_vectorPNG.png"
-            alt="Rooted company logo"
-            class="logo-image"
+            src="rooted_R_roots_vector.png"
+            alt="Rooted condensed logo"
+            class="footer-logo"
           />
         </div>
 
-        <p class="lead">Full website coming soon</p>
-      </section>
-    </main>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>0430 435 719</li>
+            <li>hello@rooted.com.au</li>
+            <li>Mon-Fri, 7am-5pm</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>2026 Rooted. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const form = document.querySelector(".contact-form");
+        const status = document.getElementById("form-status");
+        const submitButton = form?.querySelector('button[type="submit"]');
+
+        if (!form || !status || !submitButton) {
+          return;
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          status.className = "form-status is-visible";
+          status.textContent = "Sending your inquiry...";
+
+          submitButton.disabled = true;
+          const originalLabel = submitButton.textContent;
+          submitButton.textContent = "Sending...";
+
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: new FormData(form),
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (!response.ok) {
+              throw new Error("Request failed");
+            }
+
+            status.className = "form-status is-visible is-success";
+            status.textContent =
+              "Thanks, your inquiry has been sent. We'll be in touch shortly.";
+            form.reset();
+          } catch (error) {
+            status.className = "form-status is-visible is-error";
+            status.textContent =
+              "Sorry, something went wrong. Please try again or email rootedpel@outlook.com.";
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = originalLabel;
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
